@@ -1,0 +1,17 @@
+# Dependencies for the offline medrag_mini pipeline.
+# Separate from requirements.txt, which describes the original MedRAG stack
+# (pyserini/BM25/OpenAI) that this pipeline deliberately does not use.
+torch>=2.0
+transformers>=4.44
+numpy>=1.24
+pytest>=7.0
+ipykernel>=6.0
+matplotlib>=3.5
+
+# RAGAS is NOT listed here on purpose. It pins older langchain and openai
+# releases than this environment carries, so installing it here would downgrade
+# them. It lives in its own virtualenv instead:
+#
+#     ./scripts/setup_eval_venv.sh
+#
+# Evaluation falls back to its native metrics when that venv is absent.
