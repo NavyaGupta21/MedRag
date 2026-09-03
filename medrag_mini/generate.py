@@ -118,7 +118,7 @@ def _load_generator():
         dtype = torch.float16 if target.type in ("mps", "cuda") else torch.float32
         tokenizer = AutoTokenizer.from_pretrained(GENERATOR_MODEL)
         model = (
-            AutoModelForCausalLM.from_pretrained(GENERATOR_MODEL, dtype=dtype)
+            AutoModelForCausalLM.from_pretrained(GENERATOR_MODEL, torch_dtype=dtype)
             .to(target)
             .eval()
         )
