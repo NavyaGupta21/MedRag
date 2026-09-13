@@ -1,0 +1,3 @@
+[submodule "rag-interactive-pal"]
+	path = rag-interactive-pal
+	url = https://github.com/Aahant0607/rag-interactive-pal.git
